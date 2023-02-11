@@ -22,7 +22,7 @@ html {
     border-radius: 10px;
     gap: 2em;
 }
-  
+
 .mochila {
     min-width: 170px;
     max-width: 170px;
@@ -33,7 +33,7 @@ html {
     background-image: linear-gradient(to right, transparent 5px, transparent 20px, transparent 1px, transparent 25px, transparent 5px, transparent 20px, transparent 20px, transparent 86px, #c1382e 45px, #c1382e 230px, transparent 25px, transparent 172px );
     background-position: center 254px;
     background-size: 305px 6px;
-    background-repeat: repeat-x; 
+    background-repeat: repeat-x;
     border: 5px solid #410c38;
     border-radius: 85px 85px 44px 44px;
     display: inline-block;
@@ -41,13 +41,13 @@ html {
     flex-basis: auto;
     flex-grow: 1;
 }
-  
+
 .mochila:before, .mochila:after {
     display: block;
     content: '';
     position: absolute;
   }
-  
+
 .mochila:before {
     height: 75px;
     width: 118px;
@@ -65,7 +65,7 @@ html {
     text-shadow: rgb(0, 0, 0) -2px -86px 0px;
     font-size: 14px;
 }
-  
+
 .mochila:after {
     margin-left: 67px;
     margin-top: -30px;
