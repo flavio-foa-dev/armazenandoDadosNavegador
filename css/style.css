@@ -130,3 +130,20 @@ html {
     font-weight: 400;
 }
 
+
+.btn-items {
+    display: flex;
+    margin-top: 260px;
+    margin-left: 300px;
+    position: absolute;
+    gap: 10px;
+}
+
+.btn{
+    width:60px;
+    background-color: #7b1a13;
+    color:rgb(237, 232, 232);
+
+
+}
+

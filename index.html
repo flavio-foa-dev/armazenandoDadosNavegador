@@ -17,17 +17,19 @@
             <div class="mochila"></div>
             <form action="" class="adicionar" id="novo-item">
                 <label for="item">Nome</label>
-                <input type="text" name="nome" id="nome" autofocus="true">
+                <input type="text" name="nome" id="nome" autocomplete="off" autofocus>
                 <label for="item">Quantidade</label>
                 <input type="number" name="quantidade" id="quantidade" >
                 <input type="submit" value="Adicionar" class="cadastrar">
             </form>
+            <div class="btn-items">
+              <button class="btn"id="btn-save">Save</button>
+              <button class="btn" id="btn-load">Apagar</button>
+            </div>
         </div>
-
         <ul class="lista" id="list-ul">
-            <li class="item"><strong>1</strong>Casaco</li>
-            <li class="item"><strong>1</strong>Celular</li>
-            <li class="item"><strong>1</strong>Carregador</li>
+            <li class="item"><strong>ok</strong>Adicione seus itens</li>
+
         </ul>
     </main>
     <script src="./main.js"></script>
