@@ -5,7 +5,7 @@ const btnLimp = document.getElementById('btn-load');
 let items = JSON.parse(localStorage.getItem('items')) || new Array();
 
 items.forEach((item) => {
-  create(item.nome, item.quantidade);
+  create(item);
 });
 
 form.addEventListener('submit', function (e) {
@@ -27,19 +27,27 @@ function clenItem() {
 function parseItens({nome, quantidade}) {
   if (!nome || !quantidade) return null;
 
-  const result = items.find(item => item.nome === nome);
-  let id = items.length + 1;
-  if (!result) {
-    items.push({nome, quantidade, id })
-    create(nome, quantidade, id )
-  } else {
-    result.quantidade = quantidade;
+  const isItem = items.find(item => item.nome === nome);
+
+  const item = {
+    "nome": nome,
+    "quantidade": quantidade
+  };
+
+  if (isItem) {
+    item.id = isItem.id;
+    updateItem(item);
+    items[isItem.id] = item;
     save();
-    window.location.reload(true);
+  } else {
+    item.id = items.length;
+    create(item);
+    items.push(item);
+    save();
   };
 };
 
-function create(nome, quantidade, id) {
+function create({nome, quantidade, id}) {
 
   const li = document.createElement('li');
   li.classList.add('item');
@@ -51,6 +59,8 @@ function create(nome, quantidade, id) {
 
   li.innerHTML += nome;
 
+  li.appendChild(createBtn());
+
   ulList.appendChild(li);
 };
 
@@ -59,6 +69,14 @@ function save() {
   form[0].focus();
 };
 
+function updateItem (item) {
+
+  let parseId = `[data-id="${item.id}"]`;
+
+  const result = document.querySelector(parseId);
+  result.innerHTML = item.quantidade;
+}
+
 btnSave.addEventListener('click', save);
 
 btnLimp.addEventListener('click', function() {
@@ -66,3 +84,17 @@ btnLimp.addEventListener('click', function() {
   window.location.reload(true);
   form[0].focus();
 });
+
+function createBtn(){
+  let btn = document.createElement('button');
+  btn.innerText = "x";
+  btn.addEventListener("click", function() {
+    destroy();
+  })
+
+  return btn;
+}
+
+function destroy(){
+  console.log("destroy")
+}
