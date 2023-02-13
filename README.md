@@ -7,3 +7,14 @@ localStorage guarda informações de forma persistente no navegador, sendo em m�
 Cookies guardam informações de forma persistente no navegador, sendo até 4KB de armazenamento por Cookie, bem menos que localStorage. Cada cookie é como se fosse um arquivo criado que guarda as informações de acesso da pessoa usuária, por exemplo, de qual local o site foi acessado, qual e-mail foi utilizado ao realizar login no navegador, e quais produtos de um site foram clicados. Para acessá-los, muitas empresas criam pop ups para confirmar a autorização do uso dessas informações, pois são consideradas sensíveis.
 
 sessionStorage é similar ao localStorage, sua diferença é que os dados não são salvos de forma persistente, ou seja, ao fechar o navegador eles são perdidos. Este tipo de armazenamento é utilizado quando queremos que a pessoa usuária utilize os dados apenas enquanto estiver com o site aberto.
+
+### Tipo Booleano
+No Javascript, se o valor de uma variável ou constante for
+- 0,
+- -0,
+- null,
+- false,
+- NaN,
+- undefined
+- ou uma string vazia(""),
+o objeto terá um valor inicial de false.
